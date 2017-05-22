@@ -1,0 +1,12 @@
+<img src="http://placehold.it/920x230"/>
+<h4>{{product.title}}</h4>
+<div><app-stars [rating]="product.rating"></app-stars>{{product.price}}元</div>
+<div>商品描述{{product.desc}}</div>
+<hr>
+<div *ngFor="let comment of comments" data-id="{{comment.id}}">
+	<div>评论用户：{{comment.user}}</div>
+	<div>评论时间：{{comment.timestamp}}</div>
+	<div><app-stars [rating]="comment.rating"></app-stars></div>
+	<div>评论内容：{{comment.content}}</div>s
+	<hr>
+</div>
