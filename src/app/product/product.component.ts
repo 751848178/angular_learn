@@ -1,16 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {ProductService, Product} from "../shared/product.service";
 import {FormControl} from "@angular/forms";
-import  "rxjs/Rx";
+import "rxjs/Rx";
 
 @Component({
 	selector: 'app-product',
 	templateUrl: './product.component.html',
 	styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, DoCheck {
 
-	private products : Product[];
+
+	private products: Product[];
 
 	private keyword: string;
 
@@ -22,6 +23,10 @@ export class ProductComponent implements OnInit {
 
 	ngOnInit() {
 		this.products = this.productService.getProducts();
+	}
+
+	ngDoCheck(): void {
+		console.log(this.products);
 	}
 
 }

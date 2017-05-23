@@ -13,12 +13,12 @@ import {ProductDetailComponent} from "./product-detail/product-detail.component"
 import {HomeComponent} from "./home/home.component";
 import {Routes, RouterModule} from "@angular/router";
 import {ProductService} from "./shared/product.service";
-import { FilterPipe } from './pipe/filter.pipe';
+import {FilterPipe} from './pipe/filter.pipe';
 
 const routeConfig: Routes = [
-	{path:"", redirectTo : "home" , pathMatch:"full"},
-	{path:"home", component : HomeComponent},
-	{path:"productDetail/:id",component:ProductDetailComponent}
+	{path: "", redirectTo: "home", pathMatch: "full"},
+	{path: "home", component: HomeComponent},
+	{path: "productDetail/:id", component: ProductDetailComponent}
 ]
 
 @NgModule({

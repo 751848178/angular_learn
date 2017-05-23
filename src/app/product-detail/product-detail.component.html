@@ -6,7 +6,7 @@
 <div *ngFor="let comment of comments" data-id="{{comment.id}}">
 	<div>评论用户：{{comment.user}}</div>
 	<div>评论时间：{{comment.timestamp}}</div>
-	<div><app-stars [rating]="comment.rating"></app-stars></div>
+	<div><app-stars [(rating)]="comment.rating" [readonly]="false"></app-stars></div>
 	<div>评论内容：{{comment.content}}</div>s
 	<hr>
 </div>

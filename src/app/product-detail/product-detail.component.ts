@@ -24,7 +24,7 @@ export class ProductDetailComponent implements OnInit {
 		});
 		this.product = this.productService.getProduct(this.productId);
 		this.comments = this.productService.getCommentByProductId(this.productId);
-		//this.productTitle = this.activatedRoute.snapshot.params["title"];
+		// this.productTitle = this.activatedRoute.snapshot.params["title"];
 	}
 
 }
