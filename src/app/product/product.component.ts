@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit, DoCheck {
 	}
 
 	ngDoCheck(): void {
-		console.log(this.products);
+		// console.log(this.products);
 	}
 
 }

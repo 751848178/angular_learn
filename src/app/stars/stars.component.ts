@@ -11,7 +11,7 @@ export class StarsComponent implements OnInit, OnChanges {
 	private rating: number = 0;
 
 	@Output()
-	ratingChange: EventEmitter<number> = new EventEmitter();
+	private ratingChange: EventEmitter<number> = new EventEmitter();
 
 	private stars: boolean[];
 	@Input()
