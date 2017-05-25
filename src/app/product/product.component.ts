@@ -1,6 +1,7 @@
 import {Component, DoCheck, OnInit} from '@angular/core';
 import {ProductService, Product} from "../shared/product.service";
 import {FormControl} from "@angular/forms";
+import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 
 @Component({
@@ -10,8 +11,9 @@ import "rxjs/Rx";
 })
 export class ProductComponent implements OnInit, DoCheck {
 
+	private dataSource: Observable<any>;
 
-	private products: Product[];
+	private products: Array<any>;
 
 	private keyword: string;
 
@@ -22,7 +24,8 @@ export class ProductComponent implements OnInit, DoCheck {
 	}
 
 	ngOnInit() {
-		this.products = this.productService.getProducts();
+		this.dataSource = this.productService.getProducts();
+		this.dataSource.subscribe(data => this.products = data );
 	}
 
 	ngDoCheck(): void {
